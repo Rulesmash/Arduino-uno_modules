@@ -1,0 +1,104 @@
+int aPin=12;
+int bPin=13;
+int cPin=8;
+int dPin=7;
+int ePin=9;
+int fPin=11;
+int gPin=10;
+void Digi_out(int num)
+{
+  switch(num)
+  {
+    case 1:
+    digitalWrite(aPin,HIGH);
+    digitalWrite(bPin,HIGH);
+    digitalWrite(cPin,HIGH);
+    digitalWrite(dPin,HIGH);
+    digitalWrite(ePin,LOW);
+    digitalWrite(fPin,LOW);
+    digitalWrite(gPin,HIGH);
+    break;
+    case 2:
+    digitalWrite(aPin,LOW);
+    digitalWrite(bPin,LOW);
+    digitalWrite(cPin,HIGH);
+    digitalWrite(dPin,LOW);
+    digitalWrite(ePin,LOW);
+    digitalWrite(fPin,HIGH);
+    digitalWrite(gPin,LOW);
+    break;
+    case 3:
+    digitalWrite(aPin,LOW);
+    digitalWrite(bPin,LOW);
+    digitalWrite(cPin,LOW);
+    digitalWrite(dPin,LOW);
+    digitalWrite(ePin,HIGH);
+    digitalWrite(fPin,HIGH);
+    digitalWrite(gPin,LOW);
+    break;
+    case 4:
+    digitalWrite(aPin,HIGH);
+    digitalWrite(bPin,LOW);
+    digitalWrite(cPin,LOW);
+    digitalWrite(dPin,HIGH);
+    digitalWrite(ePin,HIGH);
+    digitalWrite(fPin,LOW);
+    digitalWrite(gPin,LOW);
+    break;
+    case 5:
+    digitalWrite(aPin,LOW);
+    digitalWrite(bPin,HIGH);
+    digitalWrite(cPin,LOW);
+    digitalWrite(dPin,LOW);
+    digitalWrite(ePin,HIGH);
+    digitalWrite(fPin,LOW);
+    digitalWrite(gPin,LOW);
+    break;
+    case 6:
+    digitalWrite(aPin,LOW);
+    digitalWrite(bPin,HIGH);
+    digitalWrite(cPin,LOW);
+    digitalWrite(dPin,LOW);
+    digitalWrite(ePin,LOW);
+    digitalWrite(fPin,LOW);
+    digitalWrite(gPin,LOW);
+
+    break;
+    case 7:
+    digitalWrite(aPin,LOW);
+    digitalWrite(bPin,LOW);
+    digitalWrite(cPin,LOW);
+    digitalWrite(dPin,HIGH);
+    digitalWrite(ePin,HIGH);
+    digitalWrite(fPin,HIGH);
+    digitalWrite(gPin,HIGH);
+    break;
+    case 8:
+    digitalWrite(aPin,LOW);
+    digitalWrite(bPin,LOW);
+    digitalWrite(cPin,LOW);
+    digitalWrite(dPin,LOW);
+    digitalWrite(ePin,LOW);
+    digitalWrite(fPin,LOW);
+    digitalWrite(gPin,LOW);
+    break;
+    case 9:
+    digitalWrite(aPin,LOW);
+    digitalWrite(bPin,LOW);
+    digitalWrite(cPin,LOW);
+    digitalWrite(dPin,LOW);
+    digitalWrite(ePin,HIGH);
+    digitalWrite(fPin,LOW);
+    digitalWrite(gPin,LOW);
+    break;
+    default:
+    digitalWrite(aPin,HIGH);
+    digitalWrite(bPin,HIGH);
+    digitalWrite(cPin,HIGH);
+    digitalWrite(dPin,HIGH);
+    digitalWrite(ePin,HIGH);
+    digitalWrite(fPin,HIGH);
+    digitalWrite(gPin,HIGH);
+    break;
+  }    
+ }
