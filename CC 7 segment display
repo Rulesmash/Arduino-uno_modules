@@ -102,3 +102,20 @@ void Digi_out(int num)
     break;
   }    
  }
+void setup()
+{
+  pinMode(aPin,OUTPUT);
+  pinMode(bPin,OUTPUT);
+  pinMode(cPin,OUTPUT);
+  pinMode(dPin,OUTPUT);
+  pinMode(ePin,OUTPUT);
+  pinMode(fPin,OUTPUT);
+  pinMode(gPin,OUTPUT);
+  digitalWrite(aPin,HIGH);
+  digitalWrite(bPin,HIGH);
+  digitalWrite(cPin,HIGH);
+  digitalWrite(dPin,HIGH);
+  digitalWrite(ePin,HIGH);
+  digitalWrite(fPin,HIGH);
+  digitalWrite(gPin,HIGH);
+}
