@@ -41,7 +41,7 @@ void loop() {
   int distR=readDistance(trigPinR,echoPinR);
   int differ=(distL-distR);
   
-  if(differ<-20 || differ>20){
+  if(differ<-15 || differ>15){
   
   if(differ<0)
   {
