@@ -1,0 +1,65 @@
+#include <Servo.h>
+
+Servo servo1;
+const int servoPin = 3;	//Servo pin
+const int trigPinL = 10;  // Trigger pin
+const int echoPinL = 8; // Echo pin
+const int trigPinR = 5;  // Trigger pin
+const int echoPinR = 7; // Echo pin
+
+// Define variables
+long durationL; // Duration used to calculate distance
+int distanceL;   // Distance from sensor to object
+long durationR; // Duration used to calculate distance
+int distanceR;
+
+int readDistance(int trigPin, int echoPin) {
+  digitalWrite(trigPin, LOW);
+  delay(2);
+  digitalWrite(trigPin, HIGH);
+  delay(10);
+  digitalWrite(trigPin, LOW);
+  long duration = pulseIn(echoPin, HIGH);
+  return duration * 0.034 / 2;
+}
+
+void setup() {
+  // Set the trigPin as an Output and echoPin as an Input
+  servo1.attach(servoPin);
+  pinMode(trigPinL, OUTPUT);
+  pinMode(echoPinL, INPUT);
+  pinMode(trigPinR, OUTPUT);
+  pinMode(echoPinR, INPUT);
+  
+  // Start serial communication at 9600 baud
+  Serial.begin(9600);
+}
+
+void loop() {
+  
+  int distL=readDistance(trigPinL,echoPinL);
+  int distR=readDistance(trigPinR,echoPinR);
+  int differ=(distL-distR);
+  
+  if(differ<-20 || differ>20){
+  
+  if(differ<0)
+  {
+    servo1.write(180);
+  }
+  else if(differ>0)
+  {
+    servo1.write(0);
+  }
+  }
+  else
+  {
+    servo1.write(90);
+  }
+  
+  Serial.print("R: ");
+  Serial.println(distR);
+  Serial.print("L: ");
+  Serial.println(distL);
+  delay(100);
+}
