@@ -1,0 +1,29 @@
+#include <Servo.h>
+
+// Create a servo object
+Servo myservo;
+
+// Define the servo pin
+const int servoPin = 3;
+
+void setup() {
+  // Attach the servo to the servo pin
+  myservo.attach(servoPin);
+  Serial.begin(9800);
+}
+
+void loop() {
+  myservo.write(0);
+  Serial.println("0");
+  delay(1000);
+  myservo.write(90);
+  Serial.println("90");
+  delay(3000);
+  myservo.write(180);
+  Serial.println("180");
+  delay(1000);
+  myservo.write(90);
+  Serial.println("90");
+  delay(3000);
+  
+}
