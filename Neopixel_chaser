@@ -1,0 +1,46 @@
+#include <Adafruit_NeoPixel.h>
+
+#define PIN 11	// input pin Neopixel is attached to
+
+#define NUMPIXELS 20 // number of neopixels in strip
+
+Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+
+int delayval = 200;
+
+int R = 0;
+int G = 0;
+int B = 0;
+
+void setup() {
+  // Initialize the NeoPixel library.
+  pixels.begin();
+}
+
+void loop() {
+  int i=0;
+  int j=0;
+  
+  setAllColor(pixels.Color(255, 0, 0));
+  
+  pixels.show();
+
+  for (i=0,j=0; i < NUMPIXELS; i++,j++) {
+    
+    pixels.setPixelColor(i, pixels.Color(0,0,0));
+    pixels.setPixelColor(j-2, pixels.Color(255,0,0));
+
+    // This sends the updated pixel color to the hardware.
+    pixels.show();
+
+    // Delay for a period of time (in milliseconds).
+    delay(delayval);
+  }
+}
+
+void setAllColor(uint32_t color) {
+    for(int i=0; i<pixels.numPixels(); i++) {
+        pixels.setPixelColor(i, color);
+    }
+    pixels.show();
+}
