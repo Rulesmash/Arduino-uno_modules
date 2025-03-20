@@ -21,7 +21,7 @@ void loop() {
   int i=0;
   int j=0;
   
-  setAllColor(pixels.Color(255, 0, 0));
+  setAllColor(pixels.Color(157, 0, 255));
   
   pixels.show();
 
